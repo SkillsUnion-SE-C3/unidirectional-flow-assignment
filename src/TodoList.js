@@ -1,16 +1,29 @@
 import { useState } from 'react'
+import Todo from './Todo'
 
 function TodoList() {
   const [todos, setTodos] = useState([])
+  const [value, setValue] = useState("")
+
+  function handleChange(event) {
+    setValue(event.target.value)
+  }
+
+  function addTodo(e) {
+    e.preventDefault()
+    setTodos([...todos, { name: value, done: false }])
+  }
 
   return (
     <section>
       <div>{todos.map((todo, index) =>
-        <h2 style={{ color: todo.done ? "green" : "red" }} key={`todo-${index}`}>{todo.name}</h2>
+        <Todo key={`todo-${index}`} todo={todo} />
       )}
       </div>
-      <input placeholder="Add todo" />
-      <button>Add</button>
+      <form>
+        <input onChange={handleChange} placeholder="Add todo" />
+        <button type="submit" onClick={addTodo}>Add</button>
+      </form>
     </section>
   )
 }

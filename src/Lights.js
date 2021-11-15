@@ -1,14 +1,14 @@
-import BulbBlue from './BulbBlue';
-import BulbRed from './BulbRed';
-import BulbYellow from './BulbYellow';
+import Bulb from './Bulb';
 
 
 function Lights() {
+
   return (
     <section className="section-gray">
-      <BulbBlue />
-      <BulbRed />
-      <BulbYellow />
+      <Bulb color="blue" />
+      <Bulb color="red" />
+      <Bulb color="yellow" />
+      <Bulb color="yellow" />
     </section>
   )
 }
