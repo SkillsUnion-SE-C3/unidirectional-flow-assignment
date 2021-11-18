@@ -1,8 +1,6 @@
 import { useState } from 'react'
 
 function Bulb(props) {
-
-
   let [switchedOn, setSwitchedOn] = useState(false)
 
   function handleClick() {
