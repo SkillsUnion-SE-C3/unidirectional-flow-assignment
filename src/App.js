@@ -25,7 +25,7 @@ import { useState } from 'react'
 
 function App() {
   const initialLights = [
-    { color: "red", on: false },
+    { color: "red", switchedOn: false },
     { color: "blue", switchedOn: false },
     { color: "yellow", switchedOn: false }
   ]
