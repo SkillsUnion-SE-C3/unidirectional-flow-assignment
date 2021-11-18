@@ -2,9 +2,11 @@ function Dashboard(props) {
 
   return (
     <section>
-      <h1 className="dark-text">
-        Current click count is {props.clickCount}
-      </h1>
+      <div>
+        {props.lights.map((light, index) => {
+          return <h1 key={`d-light-${index}`} className="dark-text">{`${light.color} light is ${light.switchedOn ? "on" : "off"}`}</h1>
+        })}
+      </div>
     </section>
   )
 }

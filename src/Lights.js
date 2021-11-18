@@ -1,14 +1,12 @@
 import Bulb from './Bulb';
 
-
-function Lights() {
+function Lights(props) {
 
   return (
     <section className="section-gray">
-      <Bulb color="blue" />
-      <Bulb color="red" />
-      <Bulb color="yellow" />
-      <Bulb color="yellow" />
+      {props.lights.map((light, index) => {
+        return <Bulb key={`light-${index}`} />
+      })}
     </section>
   )
 }
