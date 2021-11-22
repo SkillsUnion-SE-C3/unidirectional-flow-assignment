@@ -35,9 +35,15 @@ function App() {
 
   function getPage() {
     if (page === "lights") {
-      return <Lights />
+      return <Lights lights={lights} fruit="banana" toggleLights={toggleLights}/>
     } else if (page === "dashboard") {
-      return <Dashboard />
+      return <Dashboard lights={lights}/>
+    }
+  }
+
+  function toggleLights() {
+    if(lights === lights) {
+      return {...lights, switchedOn: true}
     }
   }
 
