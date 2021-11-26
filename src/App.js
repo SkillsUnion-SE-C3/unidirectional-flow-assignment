@@ -25,7 +25,7 @@ import { useState } from 'react'
 
 function App() {
   const initialLights = [
-    { color: "red", on: false },
+    { color: "red", switchedOn: false },
     { color: "blue", switchedOn: false },
     { color: "yellow", switchedOn: false }
   ]
@@ -35,11 +35,22 @@ function App() {
 
   function getPage() {
     if (page === "lights") {
-      return <Lights />
+      return <Lights lights={lights} apple={updateLights} />
     } else if (page === "dashboard") {
-      return <Dashboard />
+      return <Dashboard banana={lights} />
     }
   }
+
+  function updateLights(color) {
+
+    const newArry = lights.map((light) => {
+      if (light.color === color) {
+        return { ...light, switchedOn: !light.switchedOn }
+      } else { return light }
+    })
+    setLights(newArry)
+  }
+
 
   return (
     <div className="app">
